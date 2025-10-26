@@ -95,5 +95,64 @@
   \end{enumerate}
 \end{enumerate}
 
+\setcounter{subsection}{10}
+\subsection{滑らかな写像の階数}
+\begin{enumerate}
+  \item \textgt{球面の接ベクトル}\\
+  $\mathbb{R}^{n+1}$における単位球面$S^n$は，
+  方程式$\sum_{i=1}^{n+1}(x^i)^2=1$によって定義される．
+  $p=(p^1,\dots,p^{n+1})\in S^n$に対して，
+  \begin{align}
+    X_p=\left.\sum a^i\partial/\partial x^i
+    \right|_{p}\in T_p\mathbb{R}^{n+1}
+  \end{align}
+  が点$p$で$S^n$に接するための必要十分条件は，
+  $\sum a^i p^i=0$であることを示せ．
+  \begin{proof}
+    $f\colon\mathbb{R}^{n+1}\to\mathbb{R}$を
+    \begin{align}
+      f(x^1,\dots,x^{n+1})=\sum_{i=1}^{n+1}(x^i)^2-1
+    \end{align}
+    とすると，$S^n=f^{-1}(0)$である．\\
+    $X_p$が点$p$で$S^n$に接するなら，ある
+    曲線$c\colon\mathbb{R}\to S^n$が存在して，
+    $c(0)=p$, $c'(0)=X_p$を満たす(命題8.16)
+    \footnote{
+      ここは必要十分条件だと思うが，
+      Tu多様体の回答では必要性のみを用いていたのでそれに沿った．
+      一般には十分ではないのかもしれないが，私はよくわかっていない．
+    }
+    ．
+    $i\colon S^n\to\mathbb{R}^{n+1}$を包含写像とすると，
+    このような曲線$c(t)$について，
+    ここで，$f\circ i\circ c\colon\mathbb{R}\to\mathbb{R}$は
+    全ての$t$で0となるため，
+    \begin{align}
+      0&=\frac{d}{dt}(f\circ i\circ c)(t)\\
+      &=(f\circ i\circ c)_*\qty(\frac{d}{dt}\bigg|_{t})\\
+      &=f_{*,c(t)}\qty(c'(t))\\
+      &=\sum_{i=1}^{n+1}
+      \pdv{f}{x^i}\bigg|_{c(t)}\dot{c}^i(t)
+    \end{align}
+    となる\footnote{
+      本来は終域の接空間の基底
+      $\frac{\partial}{\partial z}\bigg|_0$
+      を掛ける必要があるが，ここでは省略している．
+    }．$t=0$のとき，
+    \begin{align}
+      \sum_{i=1}^{n+1}
+      \pdv{f}{x^i}\qty(p)\cdot a^i&=0\\
+      \iff
+      \sum_{i=1}^{n+1}2p^i\cdot a^i&=0\\
+      \iff
+      \sum_{i=1}^{n+1}a^ip^i&=0
+    \end{align}
+    となる．\\
+    $T_p S^n$と$\sum_{i=1}^{n+1}a^ip^i=0$を満たす
+    $T_p\mathbb{R}^{n+1}$の部分集合はどちらも同じ次元をもつ
+    ベクトル空間で，上述の議論から前者は後者に含まれるため，同型である．
+  \end{proof}
+\end{enumerate}
+
 
 \end{document}
