@@ -152,6 +152,47 @@
     $T_p\mathbb{R}^{n+1}$の部分集合はどちらも同じ次元をもつ
     ベクトル空間で，上述の議論から前者は後者に含まれるため，同型である．
   \end{proof}
+  \item\textgt{平面曲線の接ベクトル}\\
+  \begin{enumerate}
+    \item $i\colon S^1\hookrightarrow\mathbb{R}^2$を
+    単位円周の包含写像とする．
+    この問題では，$x,y$を$\mathbb{R}^2$の標準座標とし，
+    $\overline{x},\overline{y}$をその$S^1$への制限とする．
+    よって，$\overline{x}=i^*x,\overline{y}=i^*y$である．
+    上半円周$U=\{(a,b)\in S^1\mid b>0\}$
+    においては，$\overline{x}$は局所座標であり，
+    ゆえに$\partial/\partial \overline{x}$
+    が定義されている．
+    $p\in U$に対して\begin{align}
+      i_*\qty(\pdv{}{\overline{x}}\bigg|_{p})
+      =\qty(\pdv{}{x}+\pdv{\overline{y}}{\overline{x}}
+      \pdv{}{y})\bigg|_p
+    \end{align}
+    を証明せよ．したがって，
+    $i\colon T_p S^1\to T_p\mathbb{R}^2$は単射であるが，
+    $\partial/\partial \overline{x}|_p$は
+    $\partial/\partial x|_p$と同一視することはできない．
+    \begin{proof}
+      \begin{align}
+        i_*\qty(\pdv{}{\overline{x}}\bigg|_{p})
+        &=\qty(\pdv{x\circ i}{\overline{x}}\pdv{}{x}
+        +\pdv{y\circ i}{\overline{x}}\pdv{}{y})\bigg|_p\\
+        &=\qty(\pdv{\overline{x}}{\overline{x}}\pdv{}{x}
+        +\pdv{\overline{y}}{\overline{x}}\pdv{}{y})
+        \bigg|_p\\
+        &=\qty(\pdv{}{x}
+        +\pdv{\overline{y}}{\overline{x}}\pdv{}{y})
+        \bigg|_p
+      \end{align}
+    \end{proof}
+    \item $\mathbb{R}^2$における滑らかな曲線$C$について，
+    $x$の$C$への制限である$\overline{x}$が局所座標になるような
+    $C$のチャート$U$をとり，(a)の結果を一般化せよ．
+    \begin{proof}
+      (a)の変形は曲線の方程式に依らない．
+      適切にチャートが取れていれば結果は同様．
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
 
 
