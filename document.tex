@@ -7,13 +7,13 @@
 \usepackage{tikz}
 
 \mathtoolsset{showonlyrefs} % 参照した式のみ番号を表示
-\everymath{\displaystyle}
+% \everymath{\displaystyle}
 
 \renewcommand{\thesubsection}{\arabic{subsection}}
 \usepackage{titlesec}
 \titleformat{\subsection}[hang]{\normalfont\normalsize\bfseries}{\S\thesubsection}{1em}{}
 \renewcommand{\theenumi}{\arabic{subsection}.\arabic{enumi}}
-\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}}
 
 
 \begin{document}
@@ -46,6 +46,53 @@
     $h'''(x)$は$x=0$で定義されない．
     よって，$h(x)$は$C^2$級だが$x=0$で$C^3$級ではない．
   \end{proof}
+\end{enumerate}
+
+\setcounter{subsection}{7}
+\subsection{接空間}
+\begin{enumerate}
+  \setcounter{enumi}{9}
+  \item \textgt{極大値}\\
+  \label{secprob:8.10}
+  多様体上の実数値関数$f\colon M\to\mathbb{R}$が
+  $p\in M$において極大値をもつとは，
+  $f(p)\geq f(q)$がすべての$q\in U$について成り立つような
+  $p$の近傍$U$が存在することである．
+  \begin{enumerate}
+    \item 開区間$I$上で定義されている微分可能な関数
+    $f\colon I\to\mathbb{R}$が$p\in I$において極大値をもつ
+    ならば，$f'(p)=0$であることを示せ．
+    \begin{proof}
+      $f(p)\geq f(q)$がすべての$q\in I$について成り立つように
+      $I$として取り直しても良い．\\
+      $q<p$で$f(q)$が増加，$p<q$で$f(q)$が減少することを
+      踏まえると以下2つが成り立つ．
+      \begin{align}
+        \lim_{q\to p^-}\frac{f(q)-f(p)}{q-p}&\leq 0\\
+        \lim_{q\to p^+}\frac{f(q)-f(p)}{q-p}&\geq 0
+      \end{align}
+      $f$が微分可能であるため，左極限と右極限は
+      等しくなければならず，$f'(p)=0$が従う．
+    \end{proof}
+    \item $C^\infty$級関数$f\colon M\to\mathbb{R}$が
+    極大値をとる点は$f$の臨界点であることを証明せよ．
+    \begin{proof}
+      $p\in M$を$f$が極大値をとる点とし，
+      $X_p\in T_p M$を接ベクトルとする．
+      $c(t)$を始点$p$における速度ベクトルが$X_p$であるような
+      $M$上の曲線とすると，
+      $f\circ c\colon \mathbb{R}\to\mathbb{R}$
+      は$0$において極大値をもち，(a)より
+      \begin{align}
+        &(f\circ c)'(0)=0\\
+        \implies&
+        (f\circ c)_*\qty(\frac{d}{dt})
+        =f_{*,p}(X_p)=0
+      \end{align}
+      となる．これは任意の$X_p\in T_p M$について成り立つため，
+      $f_{*,p}$は零写像であり，$p$は$f$の臨界点である．
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
 
 
