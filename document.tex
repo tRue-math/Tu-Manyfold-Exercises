@@ -1,14 +1,20 @@
 \documentclass[dvipdfmx,a4paper,11pt]{jsarticle}
 
 % 数式
-\usepackage{amsmath,amsfonts,amssymb,mathtools,bm,titlesec,amsthm,ulem,siunitx,braket,url,physics,otf}
-
+\usepackage{amsmath,amsfonts,amssymb,mathtools,bm,titlesec,amsthm,ulem,siunitx,braket,url,physics,otf,bussproofs,enumitem,stmaryrd}
 % 画像
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{tikz}
 
 \mathtoolsset{showonlyrefs} % 参照した式のみ番号を表示
 \everymath{\displaystyle}
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\usepackage{titlesec}
+\titleformat{\subsection}[hang]{\normalfont\normalsize\bfseries}{\S\thesubsection}{1em}{}
+\renewcommand{\theenumi}{\arabic{subsection}.\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+
 
 \begin{document}
 
@@ -17,6 +23,30 @@
 \date{\today}
 \maketitle
 
+\section*{節末問題}
+
+\subsection{ユークリッド空間上の滑らかな関数}
+\begin{enumerate}
+  \item \textgt{$C^2$級だが$C^3$級でない関数}\\
+  $f\colon\mathbb{R}\to\mathbb{R}$を$f(x)=x^{1/3}$とし，
+  $g\colon\mathbb{R}\to\mathbb{R}$を
+  \begin{align}
+    g(x)=\int_0^x f(t)dt=\int_0^xt^{1/3}dt=\frac{3}{4}x^{4/3}
+  \end{align}
+  とする．関数$h(x)=\int_0^xg(t)dt$は$C^2$級
+  だが$x=0$で$C^3$級ではないことを示せ．
+  \begin{proof}
+    $h(x)$の1階微分，2階微分，3階微分を計算する．
+    \begin{align}
+      h'(x)&=g(x)=\frac{3}{4}x^{4/3},\\
+      h''(x)&=g'(x)=f(x)=x^{1/3},\\
+      h'''(x)&=f'(x)=\frac{1}{3}x^{-2/3}.
+    \end{align}
+    したがって，$h''(x)$は全ての$x$で定義されるが，
+    $h'''(x)$は$x=0$で定義されない．
+    よって，$h(x)$は$C^2$級だが$x=0$で$C^3$級ではない．
+  \end{proof}
+\end{enumerate}
 
 
 \end{document}
