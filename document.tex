@@ -193,6 +193,52 @@
       適切にチャートが取れていれば結果は同様．
     \end{proof}
   \end{enumerate}
+  \item \textgt{コンパクトな多様体上の滑らかな写像の臨界点}\\
+  コンパクトな多様体$N$から$\mathbb{R}^m$への滑らかな写像
+  $f$は臨界点をもつことを示せ．
+  \begin{proof}
+    第1成分への射影$\pi\colon\mathbb{R}^m\to\mathbb{R}$を用いて，
+    $\pi\circ f\colon N\to\mathbb{R}$を考える．
+    $N$はコンパクトで，$f$と$\pi$は連続であるから
+    $\pi\circ f(N)$はコンパクトで，そのため有界閉集合．
+    よって，$\pi\circ f$は最大値(と最小値)をもつ．\\
+    $p\in N$を$\pi\circ f$の最大値を与える点とし，
+    $(U,x^1,\dots,x^n)$を$p$を含むチャートとする．
+    以下を考える．
+    \begin{align}
+      (\pi\circ f)_*\qty(\pdv{}{x^i}\bigg|_{p})
+      &=\pdv{f^1}{x^i}\qty(p)\cdot \pdv{}{f^1}\bigg|_{f(p)}\\
+      &=0
+    \end{align}
+    したがって，$f_*\qty(\partial/\partial x^i|_{p})$の
+    第1成分は全ての$i$について0であり，
+    そのため$f_*$は$p$で全射でない．つまり，$p$は臨界点である．
+  \end{proof}
+  \emph{別解1}\footnote{
+    Tu多様体の回答
+  }
+  \begin{proof}
+    $f$が臨界点をもたないと仮定すると，$f$は沈め込み
+    (つまり，適切なチャートを取れば$f$は射影)．
+    ここで$\pi\colon\mathbb{R}^m\to\mathbb{R}$を
+    第1成分への射影とすると，
+    $\pi\circ f\colon N\to\mathbb{R}$も沈め込みである
+    (つまり，適切なチャートを取れば$\pi\circ f$は$x^1$)．
+    しかし，$\pi\circ f(N)$はコンパクトであるから最大値を持ち，
+    その点で臨界点となってしまう\footnote{
+      \ref{secprob:8.10}参照．
+    }ため矛盾．
+  \end{proof}
+  \emph{別解2}\footnote{
+    Tu多様体の別解
+  }
+  \begin{proof}
+    $f$が臨界点をもたないと仮定すると，$f$は沈めこみ．
+    系11.6より$f$は開写像，滑らかという仮定も踏まえて同相写像となる．
+    しかし，$N$はコンパクトであるから$f(N)$は開なコンパクト集合
+    となるが，$\mathbb{R}^m$の部分集合でその条件を満たすものは
+    空集合のみで，矛盾する．
+  \end{proof}
 \end{enumerate}
 
 
