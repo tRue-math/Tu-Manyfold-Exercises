@@ -239,6 +239,56 @@
     となるが，$\mathbb{R}^m$の部分集合でその条件を満たすものは
     空集合のみで，矛盾する．
   \end{proof}
+  \item \textgt{包含写像の微分}\\
+  単位球面$S^2$の上半球面においては，
+  \begin{align}
+    u(a,b,c)=a\text{ および }v(a,b,c)=b
+  \end{align}
+  で与えられる座標写像$\phi=(u,v)$がある．
+  ゆえに，半球面上の任意の点$p=(a,b,c)$において，
+  偏導関数$\partial/\partial u|_p,\partial/\partial v|_p$
+  は$S^2$の接ベクトルである．
+  $i\colon S^2\hookrightarrow\mathbb{R}^3$を包含写像とし，
+  $x,y,z$を$\mathbb{R}^3$の標準座標とする．
+  微分$i_*\colon T_p S^2\to T_p\mathbb{R}^3$は
+  $\partial/\partial u|_p,\partial/\partial v|_p$を
+  $T_p\mathbb{R}^3$に写す．したがって，
+  定数$\alpha^i,\beta^i,\gamma^i$を用いて
+  \begin{align}
+    i_*\qty(\pdv{}{u}\bigg|_{p})
+    &=\alpha^1\pdv{}{x}\bigg|_{p}
+    +\beta^1\pdv{}{y}\bigg|_{p}
+    +\gamma^1\pdv{}{z}\bigg|_{p},\\
+    i_*\qty(\pdv{}{v}\bigg|_{p})
+    &=\alpha^2\pdv{}{x}\bigg|_{p}
+    +\beta^2\pdv{}{y}\bigg|_{p}
+    +\gamma^2\pdv{}{z}\bigg|_{p}
+  \end{align}
+  と書ける．$i=1,2$について，$(\alpha^i,\beta^i,\gamma^i)$を求めよ．\\
+  \begin{align}
+    i_*\qty(\pdv{}{u}\bigg|_{p})
+    &=\qty(\pdv{x\circ \phi^{-1}}{u}\pdv{}{x}
+    +\pdv{y\circ \phi^{-1}}{u}\pdv{}{y}
+    +\pdv{z\circ \phi^{-1}}{u}\pdv{}{z})\bigg|_{p}\\
+    &=\qty(\pdv{u}{u}\pdv{}{x}
+    +\pdv{v}{u}\pdv{}{y}
+    +\pdv{\sqrt{1-u^2-v^2}}{u}\pdv{}{z})\bigg|_{p}\\
+    &=\qty(1\cdot\pdv{}{x}
+    +0\cdot\pdv{}{y}
+    -\frac{u}{\sqrt{1-u^2-v^2}}\cdot\pdv{}{z})\bigg|_{p}
+  \end{align}
+  同様に
+  \begin{align}
+    i_*\qty(\pdv{}{v}\bigg|_{p})
+    &=\qty(0\cdot\pdv{}{x}
+    +1\cdot\pdv{}{y}
+    -\frac{v}{\sqrt{1-u^2-v^2}}\cdot\pdv{}{z})\bigg|_{p}
+  \end{align}
+  である．よって，
+  \begin{align}
+    (\alpha^1,\beta^1,\gamma^1)&=\left(1,0,-\frac{u}{\sqrt{1-u^2-v^2}}\right),\\
+    (\alpha^2,\beta^2,\gamma^2)&=\left(0,1,-\frac{v}{\sqrt{1-u^2-v^2}}\right).
+  \end{align}
 \end{enumerate}
 
 
