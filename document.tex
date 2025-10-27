@@ -289,6 +289,40 @@
     (\alpha^1,\beta^1,\gamma^1)&=\left(1,0,-\frac{u}{\sqrt{1-u^2-v^2}}\right),\\
     (\alpha^2,\beta^2,\gamma^2)&=\left(0,1,-\frac{v}{\sqrt{1-u^2-v^2}}\right).
   \end{align}
+  \item \textgt{コンパクトな多様体の1対1のはめ込み}\\
+  $N$がコンパクトな多様体のとき，1対1のはめ込み$f\colon N\to M$
+  は埋め込みであることを証明せよ．
+  \begin{proof}
+    $f(N)$に部分空間位相を入れたものが$f$の下で$N$が同相であることを
+    示せば良い．連続であることは$V\in \mathcal{O}_{f(N)}$に対して
+    $f(N)\cap V'=V$なる$V'\in\mathcal{O}_M$が存在し，
+    \begin{align}
+      f^{-1}(V)=f^{-1}(f(N)\cap V')=f^{-1}(V')\in\mathcal{O}_N
+    \end{align}
+    より従う．\\
+    開写像であることを示す．
+    多様体の定義にハウスドルフ性が含まれていたことを踏まえると，
+    $f$はコンパクト空間からハウスドルフ空間への連続写像であるから
+    ，閉写像である\footnote{
+      コンパクト空間の閉部分集合はコンパクトで，
+      コンパクト空間の連続写像による像はコンパクトとなり，
+      ハウスドルフ空間のコンパクト部分集合は閉集合であるため．
+    }．
+    さて，任意に$U\in\mathcal{O}_N$を取ると，以下が成り立つ．
+    \begin{align}
+      U\in\mathcal{O}_N&\implies N\setminus U\in\mathcal{C}_N\\
+      &\implies f(N\setminus U)\in\mathcal{C}_M\\
+      &\implies M\setminus f(N\setminus U)\in\mathcal{O}_M
+    \end{align}
+    ここで，$M\setminus f(N\setminus U)$を$V$とおくと，
+    $f(U)=f(N)\cap V$である．
+    よって任意の$U$に対して$f(U)=f(N)\cap V$なる$V\in\mathcal{O}_M$が
+    存在し，
+    これはすなわち$f(U)$が$f(N)$の部分空間位相に関して開であることを
+    意味する．\\
+    以上より$f\colon N\to f(N)$は$f(N)$の部分空間位相
+    に関して同相写像であり，したがって$f$は埋め込みである．
+  \end{proof}
 \end{enumerate}
 
 
