@@ -323,6 +323,61 @@
     以上より$f\colon N\to f(N)$は$f(N)$の部分空間位相
     に関して同相写像であり，したがって$f$は埋め込みである．
   \end{proof}
+  \item \textgt{$SL{n,\mathbb{R}}$における乗法写像}\\
+  $f\colon \text{GL}(n,\mathbb{R})\to\mathbb{R}$を行列式写像
+  $f(A)=\det A=\det[a_{ij}]$とする．$A\in \text{SL}(n,\mathbb{R})$
+  に対して，偏導関数$\partial f/\partial a_{kl}(A)$が0でないような
+  $(k,l)$が少なくとも1つ存在する．補題9.10と陰関数定理を用いて，
+  次を証明せよ．
+  \begin{enumerate}
+    \item $\text{SL}(n,\mathbb{R})$における$A$の近傍で，
+    $(i,j)\neq(k,l)$なる$a_{ij}$たちが座標系をなし，
+    $a_{kl}$はそれ以外の成分$a_{ij},(i,j)\neq(k,l)$に関する
+    $C^\infty$級関数であるようなものが存在する．
+    \begin{proof}
+      $g=f-1$とおけば，$\text{SL}(n,\mathbb{R})=g^{-1}(0)$である．
+      $\text{GL}(n,\mathbb{R})$のチャートとして
+      $(\text{GL}(n,\mathbb{R}),a_{11},a_{12},\dots,a_{nn})$を取る
+      ことができ，
+      $\partial g/\partial a_{kl}(A)$が0でないような$(k,l)$を取れる．
+      補題9.10より，$A$のある近傍において
+      $a_{kl}$を$g$で置換して$\text{SL}(n,\mathbb{R})$に
+      適合する$\text{GL}(n,\mathbb{R})$のチャート
+      $(U,g,a_{11},\dots,a_{nn})$が得られる．
+      このSL$(n,\mathbb{R})$への制限$(U\cap\text{SL}(n,\mathbb{R}),
+      a_{11},\dots,a_{nn})$は
+      $(i,j)\neq(k,l)$なる$a_{ij}$たちが座標系をなす
+      SL$(n,\mathbb{R})$のチャートである．
+      さらに，陰関数定理より$U'\subseteq
+      U\cap\text{SL}(n,\mathbb{R})$なる$A$の近傍$U'$において
+      \begin{align}
+        g(a_{11},\dots,a_{nn})=0
+        \iff
+        a_{kl}=h(\{a_{ij}\}_{(i,j)\neq(k,l)})
+      \end{align}
+      となる$C^\infty$級関数$h$が存在する．
+      この$U'$が求める近傍である．
+    \end{proof}
+    \item 乗法写像
+    \begin{align}
+      \overline\mu\colon \text{SL}(n,\mathbb{R})\times
+       \text{SL}(n,\mathbb{R})\to \text{SL}(n,\mathbb{R})
+    \end{align}
+    は$C^\infty$級である．
+    \begin{proof}
+      (a)のチャート及び関数$h$を取ると，成分ごとに$C^\infty$
+      級関数であることが明らか．\\
+      丁寧に述べれば，$\overline\mu$は
+      $j\colon\text{SL}(n,\mathbb{R})\to\text{GL}(n,\mathbb{R})$と
+      $\mu\colon \text{GL}(n,\mathbb{R})\times
+      \text{GL}(n,\mathbb{R})\to \text{GL}(n,\mathbb{R})$とを用いて
+      \begin{align}
+        \overline\mu=j^{-1}\circ\mu\circ(j\times j)
+      \end{align}
+      と書けて，$j$,$j^{-1}$が$C^\infty$級であることが(a)より従い，
+      $\mu$も$C^\infty$級であるから，合成も$C^\infty$級であると言える．
+    \end{proof}
+  \end{enumerate}
 \end{enumerate}
 
 
