@@ -378,6 +378,28 @@
       $\mu$も$C^\infty$級であるから，合成も$C^\infty$級であると言える．
     \end{proof}
   \end{enumerate}
+  \item\textgt{誘導位相と部分空間位相}\\
+  $N$と$M$を滑らかな多様体とし，$f\colon N\to M$を
+  1対1のはめ込みとする．像$f(N)$には次の2種類の位相を与える
+  ことができる．
+  \begin{enumerate}
+    \item \emph{誘導位相}．
+    集合$V\subset f(N)$が開集合であるための必要十分条件は，
+    $f^{-1}(V)$が$N$の開集合となることである．
+    \item \emph{部分空間位相}．
+    集合$V\subset f(N)$が開集合であるための必要十分条件は，
+    $V=U\cap f(N)$となる$M$の開集合$U$が存在することである．
+  \end{enumerate}
+  誘導位相が部分空間位相より細かいこと，すなわち，
+  誘導位相がより多くの開集合をもつことを証明せよ．
+  \begin{proof}
+    部分空間位相の開集合$V$を取ると，誘導位相でも必ず開集合となることを
+    示せば良い．\\
+    $V=U\cap f(N)$なる$U\in\mathcal{O}_M$が存在するとする．
+    $f$の連続性より，$f^{-1}(U)\in\mathcal{O}_N$である．
+    ここで，$f^{-1}(U)=f^{-1}(U\cap f(N))=f^{-1}(V)$であるから，
+    $f^{-1}(V)\in\mathcal{O}_N$となり，$V$は誘導位相に関しても開集合である．
+  \end{proof}
 \end{enumerate}
 
 
